@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>amos74.lib.TEACrypt</id>
+    <version>0.1.0</version>
+    <title>TEACrypt</title>
+    <authors>Amos</authors>
+    <owners>Amos</owners>
+    <licenseUrl>https://github.com/amos74/TEACrypt/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/amos74/TEACrypt/</projectUrl>
+    <iconUrl>https://github.com/amos74/TEACrypt/blob/master/res/TEACrypt.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>TEA Encrypt/Decrypt for C#</description>
+    <releaseNotes>Build on .NetFramework</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>TEA Crypt</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\TEACrypt.dll" target="lib\netstandard1.3\TEACrypt.dll" />
+    <file src="bin\Release\TEACrypt.deps.json" target="lib\netstandard1.3\TEACrypt.deps.json" />
+  </files>
+</package>
