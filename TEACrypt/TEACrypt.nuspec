@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Amos74.Utility.TEACrypt</id>
-    <version>0.1.0</version>
+    <id>Amos42.Utility.TEACrypt</id>
+    <version>0.2.0</version>
     <title>TEACrypt</title>
     <authors>Amos</authors>
     <owners>Amos</owners>
-    <licenseUrl>https://github.com/amos74/TEACrypt/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/amos74/TEACrypt/</projectUrl>
-    <iconUrl>https://github.com/amos74/TEACrypt/blob/master/res/TEACrypt.png</iconUrl>
+    <licenseUrl>https://github.com/amos42/TEACrypt/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/amos42/TEACrypt/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/amos42/TEACrypt/master/TEACrypt/res/TEACrypt.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>TEA Encrypt/Decrypt for C#</description>
     <releaseNotes>Build on .Net Standard 2.0</releaseNotes>
