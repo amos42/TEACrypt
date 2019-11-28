@@ -95,6 +95,7 @@ namespace TEACrypt
         public static byte[] EncryptBlock(uint[] v, uint[] k)
         {
             if (v == null || k == null) return null;
+            if (k.Length < 16) return null;
 
             int n = v.Length;
             if (n == 0) return null;
@@ -128,6 +129,7 @@ namespace TEACrypt
         public static byte[] DecryptBlock(uint[] v, uint[] k)
         {
             if (v == null || k == null) return null;
+            if (k.Length < 16) return null;
 
             uint n = (uint)v.Length;
             if (n == 0) return null;
@@ -165,6 +167,7 @@ namespace TEACrypt
         {
             if (String.IsNullOrEmpty(plainText)) return null;
             if (String.IsNullOrEmpty(teaKey)) return null;
+            if (teaKey.Length < 16) return null;
 
             byte[] x = Encoding.UTF8.GetBytes(plainText);
             uint[] v = StrConvert.StrToLongs(x, 0, 0);
@@ -181,6 +184,7 @@ namespace TEACrypt
         {
             if (String.IsNullOrEmpty(cipherText)) return null;
             if (String.IsNullOrEmpty(teaKey)) return null;
+            if (teaKey.Length < 16) return null;
 
             byte[] x = Convert.FromBase64String(cipherText);
             uint[] v = StrConvert.StrToLongs(x, 0, 0);
@@ -203,11 +207,16 @@ namespace TEACrypt
             return teakey;
         }
 
-        public void SetTeaKey(string teaKey)
+        public bool SetTeaKey(string teaKey)
         {
+            if (String.IsNullOrEmpty(teaKey)) return false;
+            if (teaKey.Length < 16) return false;
+
             this.teakey = teaKey;
             byte[] x = Encoding.UTF8.GetBytes(teaKey);
             this.teakeyArr = StrConvert.StrToLongs(x, 0, 16);
+
+            return true;
         }
 
         public string Encrypt(string plainText)
