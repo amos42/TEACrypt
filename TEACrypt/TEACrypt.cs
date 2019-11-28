@@ -95,7 +95,7 @@ namespace TEACrypt
         public static byte[] EncryptBlock(uint[] v, uint[] k)
         {
             if (v == null || k == null) return null;
-            if (k.Length < 16) return null;
+            if (k.Length < 4) return null;
 
             int n = v.Length;
             if (n == 0) return null;
@@ -129,7 +129,7 @@ namespace TEACrypt
         public static byte[] DecryptBlock(uint[] v, uint[] k)
         {
             if (v == null || k == null) return null;
-            if (k.Length < 16) return null;
+            if (k.Length < 4) return null;
 
             uint n = (uint)v.Length;
             if (n == 0) return null;
