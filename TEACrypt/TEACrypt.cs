@@ -36,6 +36,7 @@ SOFTWARE.
   - Amos
 */
 using System;
+using System.Globalization;
 using System.Text;
 using StrConvertUtil;
 
@@ -55,14 +56,15 @@ namespace TEACrypt
             long time = (long)((now - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds);
             long random = (long)(new Random().NextDouble() * 65536);
             long keyValue = time * random;
-            return String.Format("{0:D16}", keyValue);
+            return String.Format(CultureInfo.InvariantCulture, "{0:D16}", keyValue);
         }
 
         /**
          * sum = 0 
          */
-        public uint Encrypt(uint[] v, uint[] k, uint sum)
+        public static uint Encrypt(uint[] v, uint[] k, uint sum)
         {
+            if (v == null || k == null) return 0;
             uint v0 = v[0], v1 = v[1];
             uint k0 = k[0], k1 = k[1], k2 = k[2], k3 = k[3];
             for (int i = 0; i < 32; i++)
@@ -78,8 +80,9 @@ namespace TEACrypt
         /**
          * sum = 0xC6EF3720 
          */
-        public uint Decrypt(uint[] v, uint[] k, uint sum)
+        public static uint Decrypt(uint[] v, uint[] k, uint sum)
         {
+            if (v == null || k == null) return 0;
             uint v0 = v[0], v1 = v[1];
             uint k0 = k[0], k1 = k[1], k2 = k[2], k3 = k[3];
             for (int i = 0; i < 32; i++)

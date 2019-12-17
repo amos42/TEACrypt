@@ -2,17 +2,23 @@
 <package >
   <metadata>
     <id>Amos42.Utility.TEACrypt</id>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <title>TEACrypt</title>
     <authors>Amos</authors>
     <owners>Amos</owners>
-    <licenseUrl>https://github.com/amos42/TEACrypt/blob/master/LICENSE</licenseUrl>
+    <icon>https://raw.githubusercontent.com/amos42/TEACrypt/master/TEACrypt/res/TEACrypt.png</icon>
+    <license>https://github.com/amos42/TEACrypt/blob/master/LICENSE</license>
     <projectUrl>https://github.com/amos42/TEACrypt/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/amos42/TEACrypt/master/TEACrypt/res/TEACrypt.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>TEA Encrypt/Decrypt for C#</description>
     <releaseNotes>Build on .Net Standard 2.0</releaseNotes>
     <copyright>Copyright 2018 Amos Home</copyright>
     <tags>TEA Crypt</tags>
+    <dependencies>
+      <dependency id="netstandard" version="2.0" />
+    </dependencies>
   </metadata>
+  <files>
+    <file src="lib\**" target="lib/{framework name}[{version}]" />
+  </files>  
 </package>

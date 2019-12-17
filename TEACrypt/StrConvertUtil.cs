@@ -56,6 +56,8 @@ namespace StrConvertUtil
 
         public static byte[] HexToByteArray(string hexString)
         {
+            if (hexString == null) return null;
+
             int byteLen = hexString.Length / 2;
             int modLen = hexString.Length % 2;
             byte[] retval = new byte[byteLen + modLen];
@@ -64,11 +66,14 @@ namespace StrConvertUtil
                 retval[0] = HexToByte(srcChars[0]);
             for (int i = 0; i < byteLen; i ++)
                 retval[modLen + i] = HexToByte(srcChars[modLen + i * 2], srcChars[modLen + i * 2 + 1]);
+
             return retval;
         }
 
         public static string ByteArrayToHex(byte[] byteArray)
         {
+            if (byteArray == null) return null;
+
             StringBuilder sb = new StringBuilder(byteArray.Length * 2);
             const string HexLit = "0123456789abcdef";
 
@@ -83,6 +88,7 @@ namespace StrConvertUtil
 
         public static uint[] StrToLongs(byte[] s, int startIdx, int length)
         {
+            if (s == null) return null;
             if (length <= 0) length = s.Length;
 
             int fs = length / 4;
@@ -112,7 +118,9 @@ namespace StrConvertUtil
         }
 
         public static byte[] LongsToStr(uint[] l)
-        { 
+        {
+            if (l == null || l.Length <= 0) return null;
+
             byte[] a = new byte[l.Length * 4];
 
             int idx = 0;
